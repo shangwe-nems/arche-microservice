@@ -1,4 +1,4 @@
-import { DatabaseModule, RqmModule } from '@app/common';
+import { DatabaseModule, RmqModule } from '@app/common';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
@@ -13,7 +13,7 @@ import { UsersModule } from './users/users.module';
   imports: [
     DatabaseModule,
     UsersModule,
-    RqmModule,
+    RmqModule,
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema: Joi.object({
