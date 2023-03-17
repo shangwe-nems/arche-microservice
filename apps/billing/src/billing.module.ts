@@ -1,4 +1,4 @@
-import { RqmModule } from '@app/common';
+import { AuthModule, RmqModule } from '@app/common';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
@@ -14,7 +14,8 @@ import { BillingService } from './billing.service';
         RABBIT_MQ_BILLING_QUEUE: Joi.string().required(),
       }),
     }),
-    RqmModule,
+    RmqModule,
+    AuthModule,
   ],
   controllers: [BillingController],
   providers: [BillingService],
